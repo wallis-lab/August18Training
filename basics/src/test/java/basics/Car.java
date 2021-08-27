@@ -3,15 +3,11 @@ package basics;
 public class Car {
 	private int odometer;
 	public String model;
-	public IEngine engine=new LargeEngine();
-	
-	Car(){
-		this.odometer=0;
-		this.model="";
-	}
+	public IEngine engine;
 	
 	Car(String model){
 		this.model=model;
+		engine=new LargeEngine();
 	}
 	
 	int getOdometer(int odo) {
@@ -25,5 +21,4 @@ public class Car {
 	public void start() {
 		this.engine.start();
 	}
-	
 }
