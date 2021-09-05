@@ -41,41 +41,67 @@ WHERE a.first_name='Bob' and a.last_name='Fawcett';
 
 7. Use a Stored Procedure to get the 4 inventory ids for the film "Alien Center" at Store #2. 
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `find_4_inventory`(
-IN p_title varchar(255),
-IN P_store_id integer)
-BEGIN
-	SELECT count(sakila.inventory.store_id)
-    	FROM  sakila.inventory
-	WHERE sakila.inventory.film_id=(SELECT DISTINCT sakila.film.film_id
-    	FROM film
-    	WHERE film.title = p_title) and inventory.store_id=P_store_id;
+SET @findid =(
+SELECT f.film_id
+FROM film as f
+WHERE f.title='Alien Center');
 
-END
+CALL film_in_stock(@findid,2,@filmCount);
+
+SELECT @filmCount;
 
 8. Insert a new store. Ensure that you use TRANSACTION. (This one is possible but it's tough! Pay attention to constraints and the order that you are inserting data.) 
 
 START TRANSACTION;
-INSERT INTO staff(staff_id, first_name, last_name, address_id, email, store_id, username,password)
-VALUE(3, 'wenlong', 'long', 5, 'longh@gmail.com', '2', 'long','wenwenwen');
 
-INSERT INTO store(store_id, manager_staff_id, address_id)
-VALUE(3, 3, 5);
-commit;
+INSERT INTO staff (first_name, last_name, address_id, email, store_id, `active`, username) 
+VALUES ("John", "Doe", "18", "rando@gmail.com", "2", "1", "newJohn");
+
+SET @staffId = LAST_INSERT_ID();
+
+INSERT INTO address (address, district, city_id, phone, location) 
+VALUES ('wenlong', 'Dime Box', 300, 7137778888, ST_GeomFromText('POINT(1 1)'));
+
+SET @addressId = LAST_INSERT_ID();
+
+INSERT INTO store (manager_staff_id, address_id) 
+VALUES (@staffId, @addressId);
+
+SET @storeId = LAST_INSERT_ID();
+
+UPDATE staff 
+SET store_id = @storeId
+WHERE staff_id = @staffId;
 
 9. Update the timestamp to the current date/time for the new store you entered in the previous question. 
+START TRANSACTION;
 
-UPDATE staff SET sakila.staff.last_update = CURRENT_TIMESTAMP
-Where staff.staff_id=3;
-UPDATE store SET sakila.store.last_update = CURRENT_TIMESTAMP
-WHERE store.store_id=3;
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE store AS s
+INNER JOIN address AS a ON a.address_id = s.address_id
+SET s.last_update = CURDATE()
+WHERE a.address = 'wenlong';
+
+SET SQL_SAFE_UPDATES = 1;
+
+ROLLBACK;
 
 10. Delete the new store. 
 
-delete from store
-WHERE store.store_id=3;
-delete from staff
-where staff.staff_id=3;
+START TRANSACTION;
+
+SET SQL_SAFE_UPDATES = 0;
+
+DELETE s.*
+FROM store As s
+INNER JOIN address AS a 
+ON a.address_id = s.address_id
+WHERE a.address = 'wenlong';
+
+SET SQL_SAFE_UPDATES = 1;
+
+ROLLBACK;
 
 
 https://dev.mysql.com/doc/sakila/en/sakila-introduction.html
