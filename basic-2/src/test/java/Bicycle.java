@@ -14,8 +14,4 @@ public class Bicycle extends Vehicle{
 	boolean isDriveable() {
 		return true;
 	}
-	
-	public void start() {
-		System.out.println("Start riding");
-	}
 }

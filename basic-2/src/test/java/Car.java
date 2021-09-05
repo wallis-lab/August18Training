@@ -4,13 +4,10 @@ public class Car extends Vehicle {
 	public String model;
 	public boolean isStart;
 	
-	Car(IEngine Iengine){
-		Iengine=new SmallEngine();
-	}
-	
 	Car(String model, IEngine Iengine){
 		 this.model=model;
 		 Iengine=new LargeEngine();
+		 isStart=true;
 	}
 	
 	public int getOdometer() {
@@ -21,10 +18,6 @@ public class Car extends Vehicle {
 		this.odometer+=distance;
 	}
 	
-	public void start(IEngine IEngine) {
-		IEngine.start();
-		isStart=true;
-	}
 	public boolean getIsStart() {
 		return this.isStart;
 	}

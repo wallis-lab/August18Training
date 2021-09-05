@@ -16,7 +16,6 @@ public class Cars {
 		String model="Corvette";
 		IEngine engine = new LargeEngine();
 		Car car = new Car(model, engine);
-		car.start(engine);
 		assertTrue("Engine not start",car.isStart==true);
 		assertEquals("Inconsistent initialization results.",0,car.getOdometer());
 		car.drive(10);
@@ -47,15 +46,11 @@ public class Cars {
 	
 	@Test
 	public void canSwitchConvertible() {
-		int[] ConvertibleAdjestment= new int[] {1,2,3,4,5};
-		String raise="up";
-		String lower="down";
+		boolean switchStates=false;
+		String model = "convert";
 		SmallEngine smallEngine = new SmallEngine();
-		Convertible_Car convertCar = new Convertible_Car(raise,ConvertibleAdjestment[2],smallEngine);
-		assertTrue("not raise", convertCar.getconvertibleStatus()==raise);
-		assertTrue("not level 3", convertCar.getConvertibleAdjestment()==ConvertibleAdjestment[2]);
-		Convertible_Car convertCar1 = new Convertible_Car(lower,ConvertibleAdjestment[3],smallEngine);
-		assertTrue("not lower", convertCar1.getconvertibleStatus()==lower);
-		assertTrue("not level 4", convertCar1.getConvertibleAdjestment()==ConvertibleAdjestment[3]);
+		Convertible_Car convertCar = new Convertible_Car(model ,switchStates ,smallEngine);
+		convertCar.start(smallEngine);
+		assertTrue("not raise", convertCar.getconvertibleStatus()==switchStates);
 	}
 }

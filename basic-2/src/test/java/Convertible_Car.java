@@ -1,27 +1,22 @@
 import java.util.jar.Attributes.Name;
 
 public class Convertible_Car extends Car {
-	public String convertibleStatus="";
-	public int ConvertibleAdjestment=0; 
+	public boolean Convertiblestatus =false; 
 	public boolean isStart;
-	
-	Convertible_Car(String convertibleStatus, int ConvertibleAdjestment, IEngine IEngine){
-		super(IEngine);
-		this.convertibleStatus=convertibleStatus;
-		this.ConvertibleAdjestment=ConvertibleAdjestment;
-	}
 	
 	Convertible_Car(String model, IEngine IEngine) {
 		super(model, IEngine);
 		IEngine=new SmallEngine();	
 	}
 	
-	public int getConvertibleAdjestment() {
-			return this.ConvertibleAdjestment;
+	Convertible_Car(String model,boolean Convertiblestatus, IEngine IEngine) {
+		super(model, IEngine);
+		IEngine=new SmallEngine();
+		this.Convertiblestatus=Convertiblestatus;
 	}
 	
-	public String getconvertibleStatus() {
-		return this.convertibleStatus;
+	public boolean getconvertibleStatus() {
+		return this.Convertiblestatus;
 	}
 	
 	public void start(IEngine IEngine) {
