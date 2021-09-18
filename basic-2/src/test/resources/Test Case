@@ -163,7 +163,15 @@ Step:
  Expected result: dispaly the web not more than 30 seconds 	Status: pass
 
 Find and log 2 bugs.
-The create account system allows number and letter to be filled after domain
+
+Bug ID: 001
+Bug name: The create account system allows number and letter to be filled after domain
+Severity: Minor
+Priority: Medium
+Assigned to: Developer
+Reported By: Wenlong Wang
+Reason: Defect
+Status: New
 Step:
 1. loading the website http://automationpractice.com/
 2. click sign in button
@@ -171,7 +179,15 @@ Step:
 Expected result:  error message "not work with '1111'"
 Actual result: it allows user enter number or invalid email
 
-Did not detect the user's email address
+Bug ID: 002
+Bug name: Did not detect the user's email address
+Severity: Low
+Priority: Low
+Assigned to: Developer
+Reported By: Wenlong Wang
+Reason: Defect
+Status: New
+
 Step:
 1. loading the website http://automationpractice.com/
 2. click sign in button
