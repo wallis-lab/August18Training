@@ -24,4 +24,4 @@ public abstract class TestBase {
 	public void cleanup() {
 		this.driver.quit();
 	}
-} 
+}

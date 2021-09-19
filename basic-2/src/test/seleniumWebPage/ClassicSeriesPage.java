@@ -19,4 +19,4 @@ public class ClassicSeriesPage extends PageObject {
 	public WebElement getClassicProductPageElement(String classicProductElement) {
 		return driver.findElement(By.xpath("//tbody//a[contains(text(), '" + classicProductElement + "')]"));
 	}
-} 
+}

@@ -30,4 +30,4 @@ public class SvtProPage extends PageObject{
 	public WebElement getSvtProProductElement(String svtProProductElement) {
 		return driver.findElement(By.xpath("//tbody//a[contains(text(), '" + svtProProductElement + "')]"));
 	}
-} 
+}
