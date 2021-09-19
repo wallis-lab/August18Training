@@ -31,3 +31,4 @@ public class ProductPage extends PageObject{
 		return driver.findElement(By.xpath("//td[@class='borderBottom']/a[contains(@href, '" + productTypeElement + "')]"));
 	}
 }
+

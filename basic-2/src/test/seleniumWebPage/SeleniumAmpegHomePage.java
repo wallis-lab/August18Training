@@ -21,3 +21,4 @@ public class SeleniumAmpegHomePage extends PageObject {
 		return driver.findElement(By.xpath("//div[@id='global-topnav']//a[@class = '"+ productElement +"']"));
 	}
 }
+
