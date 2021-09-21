@@ -1,4 +1,3 @@
-package cars;
 
 public class LargeEngine implements IEngine{
 	
