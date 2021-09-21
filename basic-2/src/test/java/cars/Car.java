@@ -1,3 +1,4 @@
+package cars;
 
 public class Car extends Vehicle {
 	private int odometer=0;
