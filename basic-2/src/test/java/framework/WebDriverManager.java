@@ -6,13 +6,10 @@ import java.io.InputStream;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+import ampeg.foundation.ChormeDriverManager;
+import ampeg.foundation.EdgeDriverManager;
 
 public class WebDriverManager {
-	static final String WEB_DRIVER_SYSTEM_PROPERTY_CHROME = "webdriver.chrome.driver";
-	static final String WEB_DRIVER_SYSTEM_PROPERTY_EDGE = "webdriver.edge.driver";
-	static final String chromeDriverPath = "C:\\Users\\Administrator\\Desktop\\chromedriver.exe";
-	static final String edgeDriverPath = "C:\\Users\\Administrator\\Desktop\\msedgedriver.exe";
 	protected static WebDriver driver;
 	
 	public static WebDriver createDriver() {
@@ -21,11 +18,11 @@ public class WebDriverManager {
 			String driverType = getDriverType();
 		
 		if(driverType.equals("Chrome")){
-			System.setProperty(WEB_DRIVER_SYSTEM_PROPERTY_CHROME, chromeDriverPath);
+			System.setProperty(ChormeDriverManager.WEB_DRIVER_SYSTEM_PROPERTY_CHROME, ChormeDriverManager.chromeDriverPath);
 			driver = new ChromeDriver();
 		}else if(driverType.equals("Edge")){
-			System.setProperty(WEB_DRIVER_SYSTEM_PROPERTY_EDGE, edgeDriverPath);
-			driver = new EdgeDriver();
+			System.setProperty(EdgeDriverManager.WEB_DRIVER_SYSTEM_PROPERTY_EDGE, EdgeDriverManager.edgeDriverPath);
+			driver = new ChromeDriver();
 		}
 		}
 			return driver;
