@@ -1,5 +1,4 @@
 package cars;
-import java.lang.invoke.ConstantBootstraps;
 
 public class Bicycle extends Vehicle{
 	private int odometer=0;

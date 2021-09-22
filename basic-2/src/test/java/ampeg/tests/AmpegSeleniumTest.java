@@ -7,7 +7,6 @@ import ampeg.foundation.AmpegTestBase;
 import ampeg.pageObjects.AmpegHomePage;
 import ampeg.pageObjects.SVT410HLFDetailPage;
 
-
 public class AmpegSeleniumTest extends AmpegTestBase {
 	
 	@Test
