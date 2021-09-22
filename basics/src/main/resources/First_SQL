@@ -1,0 +1,82 @@
+Sakila Database
+Write a SQL statement for each of the following. 
+
+1. Get 10 cities in descending alphabetical order.
+
+USE sakila;
+SELECT * 
+FROM city
+ORDER BY city DESC
+LIMIT 10;
+
+2. Get all films with "airplane" in the title.
+
+SELECT * 
+FROM film AS f
+WHERE f.title like '%airplane%';
+
+3. Get the highest payment amount.
+
+SELECT max(payment.amount) As highest_amount FROM payment; 
+
+4. Get the number of records in the customer table for store id #1.
+
+SELECT count(store_id) As TotalRecords
+FROM customer
+WHERE store_id=1;
+
+5. Get all payment records for customer with email address "NANCY.THOMAS@sakilacustomer.org"
+
+SELECT *
+FROM customer As c
+LEFT join payment As p
+ON c.customer_id=p.customer_id
+WHERE c.email = 'NANCY.THOMAS@sakilacustomer.org';
+
+6. Use a View to get the film info for actor Bob Fawcett.
+
+SELECT * 
+FROM actor_info AS a
+WHERE a.first_name='Bob' and a.last_name='Fawcett';
+
+7. Use a Stored Procedure to get the 4 inventory ids for the film "Alien Center" at Store #2. 
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `find_4_inventory`(
+IN p_title varchar(255),
+IN P_store_id integer)
+BEGIN
+	SELECT count(sakila.inventory.store_id)
+    	FROM  sakila.inventory
+	WHERE sakila.inventory.film_id=(SELECT DISTINCT sakila.film.film_id
+    	FROM film
+    	WHERE film.title = p_title) and inventory.store_id=P_store_id;
+
+END
+
+8. Insert a new store. Ensure that you use TRANSACTION. (This one is possible but it's tough! Pay attention to constraints and the order that you are inserting data.) 
+
+START TRANSACTION;
+INSERT INTO staff(staff_id, first_name, last_name, address_id, email, store_id, username,password)
+VALUE(3, 'wenlong', 'long', 5, 'longh@gmail.com', '2', 'long','wenwenwen');
+
+INSERT INTO store(store_id, manager_staff_id, address_id)
+VALUE(3, 3, 5);
+commit;
+
+9. Update the timestamp to the current date/time for the new store you entered in the previous question. 
+
+UPDATE staff SET sakila.staff.last_update = CURRENT_TIMESTAMP
+Where staff.staff_id=3;
+UPDATE store SET sakila.store.last_update = CURRENT_TIMESTAMP
+WHERE store.store_id=3;
+
+10. Delete the new store. 
+
+delete from store
+WHERE store.store_id=3;
+delete from staff
+where staff.staff_id=3;
+
+
+https://dev.mysql.com/doc/sakila/en/sakila-introduction.html
+
