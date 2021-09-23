@@ -33,3 +33,8 @@ public class SvtProPage extends PageObject{
 		return driver.findElement(By.xpath("//tbody//a[contains(text(), '" + svtProProductElement + "')]"));
 	}
 }
+
+
+
+
+

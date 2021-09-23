@@ -14,3 +14,4 @@ public class ChromeDriverManager extends DriverManager{
 		setDriver(new ChromeDriver());
 	}
 }
+

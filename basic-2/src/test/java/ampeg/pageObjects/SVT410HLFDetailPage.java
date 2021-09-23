@@ -17,3 +17,4 @@ public class SVT410HLFDetailPage extends PageObject{
 		return segments[segments.length - 1];
 	}
 }
+

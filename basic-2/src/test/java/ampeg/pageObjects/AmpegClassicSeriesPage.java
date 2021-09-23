@@ -22,3 +22,4 @@ public class AmpegClassicSeriesPage extends PageObject {
 		return driver.findElement(By.xpath("//tbody//a[contains(text(), '" + classicProductElement + "')]"));
 	}
 }
+
