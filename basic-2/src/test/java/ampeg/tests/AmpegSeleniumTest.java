@@ -48,4 +48,3 @@ public class AmpegSeleniumTest extends AmpegTestBase {
 	}
 }
 
-
