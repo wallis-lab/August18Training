@@ -2,7 +2,10 @@ package ampeg.pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'Design-Patterm-Selenium' of https://github.com/wallis-lab/August18Training
 import framework.PageObject;
 
 public class AmpegClassicSeriesPage extends PageObject {

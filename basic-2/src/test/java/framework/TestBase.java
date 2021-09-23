@@ -45,4 +45,8 @@ public abstract class TestBase {
 	public void cleanup() {
 		this.manager.quitDriver();
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> branch 'Design-Patterm-Selenium' of https://github.com/wallis-lab/August18Training
