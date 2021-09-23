@@ -1,0 +1,196 @@
+Project Name: http://automationpractice.com/
+Created By: Wenlong Wang
+Creation Date: 9/7/2021
+Executed data:9/7/2021
+
+Test Scenario ID: FR001-B1
+Test Case ID: 001
+Title: Can login while using the email and password.
+Summary: Passing invalid or valid between username and password to the login system.
+
+PreConditions:
+User has a valid username and valid password. 
+
+Steps:     
+1. On homepage, click on the login button.                   		Expected result:  login page is displayed  
+2. In login page, Enter valid username and valid password.  		Expected result:  Successful login
+Status: Pass
+
+PreConditions:
+User has a invalid username and invalid  password. 
+
+Steps:     
+1. On homepage, click on the login button.                         	Expected result:  login page is displayed  
+2. In login page, Enter invalid username and invalid password.  	Expected result: error massage "invalid email address"
+Status: fail
+
+PreConditions:
+User has a invalid username and valid password. 
+
+Steps:     
+1. On homepage, click on the login button.                          Expected result:  login page is displayed  
+2. In login page, Enter invalid username and valid password.  		Expected result:  error massage"invalid email address"
+Status: fail
+
+PreConditions:
+User has a valid username and invalid password. 
+
+Steps:     
+1. On homepage, click on the login button.                          Expected result:  login page is displayed   
+2. In login page, Enter valid username and invalid password.  	    Expected result:  error massage"invalid password
+Status: fail
+  
+Test Scenario ID: FR002-B1
+Test Case ID: 002
+Title: Can registered on website with valid information.
+Summary: User enter simple registration form get successful registered.
+
+PreConditions: 
+User will enter a valid information
+
+Steps:
+1. On homepage, click on the sign in button.    					
+2. In login page, enter a valid email address then click create an account button. 
+3. enter number  First name                               			
+4. enter number  Last name                               			
+5. enter number  Email ID                                		   
+6. enter number  Contact number                     				
+7. enter number  Password                               
+8. try to enter number  Confirm password         			Expected result: Password displayed  
+Actual result: Confirm password button not found  	 Status: fail
+9. Click accept term and conditions                   		Expected result: check marks on        	 	 			 Status: Pass
+10. Click registered 			         					Expected result: Successful registered Actual result: error massage"address, city, zip, State"Status: fail
+11. enter address, city, ZIP, state ,Click registered   	Expected result: Successful registered					 Status: Pass
+
+Test Scenario ID: FR003-B1
+Test Case ID: 003
+Title: Can using keyword search and using the category, filter and sorting options.
+Summary: User able to search product by keyword, category and sorting option except filters option.
+
+PreConditions: 
+User want to buy a cheap dresses
+Step:
+1. On homepage, enter dresses in the search box. 			Expected result: display the dresses information.    	 Status: pass
+2. On this page, select sort by lower first. 				Expected result: display the low to high. 				 Status: Pass
+3. On this page, select category at Women-> summer dresses. Expected result:  display the casual dresses. 		     Status: pass
+4. Select white on filter. Expected result: Display the white dresses  Actual result:  No change   					 Status: fail
+
+Test Scenario ID: FR004-B1
+Test Case ID: 004
+Title: Can view the product's details
+Summary:  User able to view the product's details
+
+PreConditions: 
+User want to view the product details
+
+Step:
+1. On homepage, select woman->Casual dresses  Expected result: display the Casual dresses information.    	 Status: pass
+2. click printed dress   Expected result: display the printed dresses information.    				 		 Status: pass
+3. looking this page.   Expected result: shows image, price, title, review, and ratings. Actual result:  rating not shows   Status: fail
+
+Test Scenario ID: FR007-B1
+Test Case ID: 005
+Title: Can added into shopping cart from the product detail page.
+Summary: User allow to add a product to the shopping card in the product detail page.
+
+PreConditions: 
+User Select a dresses
+Step:
+1. On homepage, enter printed dress  Expected result: display printed dress information   Status: pass
+2. click the printed dress  Expected result: display the product detail Status: pass
+3. click the add to cart button to che  Expected result: pop a windows show the successfully added Status: pass
+4. click the process to checkout button. Expected result: jump to checkout page.  Status: pass
+
+Test Scenario ID: FR007-B4
+Test Case ID: 006
+Title: Can checkout
+Summary: User able to login and checkout all the product in the shipping card.
+
+PreConditions: 
+User has a valid account
+Step:
+1. on homepage, enter dresses.  Expected result: display dress information Status: pass
+2. on this page, select printed dress  Expected result: display printed dress detail Status: pass
+3. click add to cart button  Expected result: successful added  detail Status: pass
+4. click proceed to checkout button. Expected result: display checkout page Status: pass
+5. click proceed to checkout button again. Expected result: jump to sign in page detail Status: pass
+6. sign in with valid username and password.  Expected result: jump to next step detail Status: pass
+7. select the address, and click process to checkout Expected result: jump to next step detail Status: pass
+8 select shipping method, and agree the term service then click proceed to checkout Expected result: jump to payment detail Status: pass
+9. add bank info, click I confirm my order. Expected result: show the shipping detail Status: pass
+
+Test Scenario ID: FR008-B3
+Test Case ID: 007
+Title: Can enter billing and shipping address before checkout and payment
+Summary: 
+
+PreConditions: 
+User has a valid account and simple information
+Step:
+1. on homepage, enter dresses. 
+2. on this page, select printed dress 
+3. click add to cart button 
+4. click proceed to checkout button. 
+5. click proceed to checkout button again.
+6. sign in with valid username and password.  
+7. select add a new address button  
+8. enter valid information 
+9. click save button  
+10. select new address at delivery address.  
+Expected result: dispaly new info	Status: pass
+
+Test Scenario ID: NFR001
+Test Case ID: 008
+Title: Can website repository shall accommodate up to 100 users
+Summary:  Spikes of activity cannot affect the website continue to function consistently
+
+PreConditions: 
+101 users want access this web
+Step:
+1. 100 user access this web  Expected result: no impact on website performance	Status: pass
+2. 101 user access this web  Expected result: impact on website performance	Status: pass
+
+Test Scenario ID: NFR002
+Test Case ID: 009
+Title: Can quickly visit the homepage of the website
+Summary:  User can quickly visit this website
+
+PreConditions: 
+a good speed of internet
+
+Step:
+1. open the browser, enter websiete url, and check how long it takes to finish loading. 
+ Expected result: dispaly the web not more than 30 seconds 	Status: pass
+
+Find and log 2 bugs.
+
+Bug ID: 001
+Bug name: The create account system allows number and letter to be filled after domain
+Severity: Minor
+Priority: Medium
+Assigned to: Developer
+Reported By: Wenlong Wang
+Reason: Defect
+Status: New
+Step:
+1. loading the website http://automationpractice.com/
+2. click sign in button
+3. enter "1111@g.com1111" and click the create an account button
+Expected result:  error message "not work with '1111'"
+Actual result: it allows user enter number or invalid email
+
+Bug ID: 002
+Bug name: Did not detect the user's email address
+Severity: Low
+Priority: Low
+Assigned to: Developer
+Reported By: Wenlong Wang
+Reason: Defect
+Status: New
+
+Step:
+1. loading the website http://automationpractice.com/
+2. click sign in button
+3. enter "176914924@163.com" in the right part and click password button  Expected result: display green check mark
+4. modify the email "176914924@163.com1", and click pawword button again Expected result: display red cross check mark
+Actual result:  display green check mark
