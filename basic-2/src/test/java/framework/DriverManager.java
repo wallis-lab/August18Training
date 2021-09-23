@@ -18,7 +18,7 @@ public abstract class DriverManager {
 		this.driver = targetDriver;
 	}
 
-	public static void quitDriver() {
+	public void quitDriver() {
 		this.driver.quit();
 		this.driver = null;
 	}
