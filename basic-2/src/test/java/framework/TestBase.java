@@ -1,7 +1,5 @@
 package framework;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -12,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 public abstract class TestBase {
 	protected WebDriver driver;
 	protected String baseUrl;
-	String driverType;
+	protected DriverManager manager;
 	
 	protected TestBase(String baseUrl){
 		this.baseUrl = baseUrl;
@@ -20,10 +18,11 @@ public abstract class TestBase {
 	
 	@Before
 	public void setup() {
-		driverType= getDriverType();
-		
-		this.driver = DriverManagerFactory.getManager(driverType).getDriver();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		String driverType= getDriverType();
+		this.manager= DriverManagerFactory.getManager(driverType);
+		this.manager.createDriver();
+		this.driver=this.manager.getDriver();
+		this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		this.driver.manage().window().maximize();
 		this.driver.navigate().to(this.baseUrl);
 	}
@@ -35,17 +34,15 @@ public abstract class TestBase {
 			 InputStream inputstream =new FileInputStream(filePath);
 			 propertie.load(inputstream);
 			}
-		catch(FileNotFoundException e){
-			 e.printStackTrace();
+		catch(Exception e){
+			 throw new RuntimeException();
 			 }
-		catch(IOException e) {
-			e.printStackTrace();
-		}
+		
 		return propertie.getProperty("browserType");
 	}
 	
 	@After
 	public void cleanup() {
-		DriverManager.quitDriver();
+		this.manager.quitDriver();
 	}
 }

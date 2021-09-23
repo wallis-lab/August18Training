@@ -3,21 +3,21 @@ package framework;
 import org.openqa.selenium.WebDriver;
 
 public abstract class DriverManager {
-	protected static WebDriver driver;
+	protected WebDriver driver;
 	protected abstract void createDriver();
 		
 	public WebDriver getDriver() {
 		
-		if (driver == null) {
-			createDriver();
+		if (this.driver == null) {
+			throw new RuntimeException("Driver not started");
 		}
-			return driver;
+			return this.driver;
 	}
 	protected void setDriver(WebDriver targetDriver) {
 		driver = targetDriver;
 	}
 
-	public static void quitDriver() {
+	public void quitDriver() {
 		driver.quit();
 		driver = null;
 	}

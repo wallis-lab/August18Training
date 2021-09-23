@@ -10,6 +10,15 @@ import ampeg.pageObjects.SVT410HLFDetailPage;
 public class AmpegSeleniumTest extends AmpegTestBase {
 	
 	@Test
+	public void canGetDriverType() {
+		String expectedDriverType = "Chrome";
+		
+		String actrualDviverType = getDriverType();
+		
+		assertTrue("Not get the expected driver type" + expectedDriverType, expectedDriverType.equals(actrualDviverType));
+	}
+	
+	@Test
 	public void canClickHomeBreadcrumbLink() {
 		
 		String expectUrl = "https://ampeg.com/index.html";
