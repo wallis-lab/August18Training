@@ -1,4 +1,4 @@
-package framework;
+package java.ampeg.framework;
 import java.io.FileInputStream;
 <<<<<<< HEAD
 import java.io.InputStream;

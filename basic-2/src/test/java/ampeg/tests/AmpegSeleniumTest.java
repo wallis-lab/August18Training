@@ -1,5 +1,4 @@
 package ampeg.tests;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -10,7 +9,6 @@ import ampeg.pageObjects.SVT410HLFDetailPage;
 public class AmpegSeleniumTest extends AmpegTestBase {
 	
 	@Test
-
 	public void canGetDriverType() {
 		String expectedDriverType = "Chrome";
 		
@@ -20,7 +18,6 @@ public class AmpegSeleniumTest extends AmpegTestBase {
 	}
 	
 	@Test
-
 	public void canClickHomeBreadcrumbLink() {
 		
 		String expectUrl = "https://ampeg.com/index.html";
