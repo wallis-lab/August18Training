@@ -4,9 +4,14 @@
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
+<<<<<<< HEAD
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="src" output="target/classes" path="src/main/java">
+=======
+		</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+>>>>>>> 7ee8b8ec6695f52eb726182e9b53b5e1098ed02b
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>

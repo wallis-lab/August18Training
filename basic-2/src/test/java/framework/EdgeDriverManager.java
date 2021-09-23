@@ -10,7 +10,7 @@ public class EdgeDriverManager extends DriverManager{
 	EdgeDriverManager(){
 		System.setProperty(WEB_DRIVER_SYSTEM_PROPERTY_EDGE, edgeDriverPath);
 	}
-	
+
 	public void createDriver() {
 		setDriver(new EdgeDriver());
 	}
