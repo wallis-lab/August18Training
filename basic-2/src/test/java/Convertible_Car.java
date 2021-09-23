@@ -9,7 +9,6 @@ public class Convertible_Car extends Car {
 		IEngine=new SmallEngine();	
 	}
 	
-	
 	Convertible_Car(String model,boolean Convertiblestatus, IEngine IEngine) {
 		super(model, IEngine);
 		IEngine=new SmallEngine();
