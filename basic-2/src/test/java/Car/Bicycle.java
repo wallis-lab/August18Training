@@ -1,5 +1,4 @@
-import java.lang.invoke.ConstantBootstraps;
-
+package Car;
 public class Bicycle extends Vehicle{
 	private int odometer=0;
 
@@ -15,3 +14,4 @@ public class Bicycle extends Vehicle{
 		return true;
 	}
 }
+
