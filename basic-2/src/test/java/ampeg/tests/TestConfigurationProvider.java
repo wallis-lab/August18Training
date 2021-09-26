@@ -1,12 +1,13 @@
 package ampeg.tests;
-
-import static org.junit.Assert.assertTrue;
-
-import java.awt.List;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
 import java.io.BufferedReader;
+import java.io.FileReader;
+import static org.junit.Assert.assertTrue;
+import java.awt.List;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -14,9 +15,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.junit.Test;
-
 import com.opencsv.CSVReader;
-
 import framework.ConfigurationProvider;
 import net.bytebuddy.description.type.TypeDefinition.SuperClassIterator;
 import okhttp3.MultipartBody.Part;
@@ -154,29 +153,29 @@ public class TestConfigurationProvider {
 	@Test
 	public void test6() throws IOException{
 		
-		BufferedReader reader1 = new BufferedReader(new FileReader(new File("./resources/basses.csv")));
-		int i =0;
-		int index=0;
-		String line = null;  
-		while((line=reader1.readLine())!=null){  
-		String item = line.split(",")[2];
-	
-		System.out.println(item);
-		index++;
-		i++;
-		}
-		/*line=reader1.readLine();
-		String item = line.split(",")[2];
-		System.out.println(item);*/
-
-		}
-	
-	@Test
-	public void test11() {
-	
-		test6(0,1);
-		
-		
+		HashMap<String, ArrayList<String>> custom1 = new HashMap<String, ArrayList<String>>();
+		ArrayList<String> users = new ArrayList<String>();
+		ArrayList<String> users1 = new ArrayList<String>();
+		  try(
+	             BufferedReader br = new BufferedReader(new FileReader("./resources/basses.csv"));
+	             CSVParser parser = CSVFormat.DEFAULT.withDelimiter(',').withHeader().parse(br);
+	         ) {
+	            for(CSVRecord record : parser) {
+	                //System.out.println(record.get("Make"));
+	                users.add(record.get("Make"));
+	               // System.out.println(record.get("Model"));
+	                users1.add(record.get("Model"));
+	               
+	            }
+	            custom1.put("Make", users);
+	            custom1.put("Model", users1);
+	            
+	        } catch (Exception e) {
+	            System.out.println(e);
+	        }
+		  
+		  
+		  System.out.println(custom1);
 	}
 
 }
