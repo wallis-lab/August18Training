@@ -1,4 +1,5 @@
-package framework;
+package test.java.framework;
+
 
 import org.openqa.selenium.chrome.ChromeDriver;
 

@@ -1,8 +1,9 @@
-package ampeg.pageObjects;
+package test.java.ampeg.pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import framework.PageObject;
+
+import test.java.framework.PageObject;
 
 public class SvtProPage extends PageObject{
 	protected SvtProPage(WebDriver driver, String baseUrl) {

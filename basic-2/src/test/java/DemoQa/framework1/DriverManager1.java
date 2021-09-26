@@ -1,8 +1,8 @@
-package test.java.DemoQa.framework;
+package test.java.DemoQa.framework1;
 
 import org.openqa.selenium.WebDriver;
 
-public class DriverManager {
+public abstract class DriverManager1 {
 	protected WebDriver driver;
 	protected abstract void createDriver();
 		

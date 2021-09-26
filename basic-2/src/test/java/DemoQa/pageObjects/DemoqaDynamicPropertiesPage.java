@@ -4,18 +4,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class DemoqaDynamicPropertiesPage extends DemoqaPageObject {
-	protected AmpegClassicSeriesPage(WebDriver driver, String baseUrl) {
+import test.java.DemoQa.framework1.DemoqaPageObject1;
+
+public class DemoqaDynamicPropertiesPage extends DemoqaPageObject1 {
+	protected DemoqaDynamicPropertiesPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}
 	
-	public SVT410HLFDetailPage clickSVT410HLFDetailPage() {
+	public DemoqaDynamicPropertiesPage clickSVT410HLFDetailPage() {
 		
 		WebElement menuElement = getClassicProductPageElement("SVT-410HLF");
 		
 		menuElement.click();
 
-		return new SVT410HLFDetailPage(this.driver, this.baseUrl);
+		return new DemoqaDynamicPropertiesPage(this.driver, this.baseUrl);
 	}	
 	
 	public WebElement getClassicProductPageElement(String classicProductElement) {

@@ -4,25 +4,25 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class DemoqaHomePage extends DemoqaPageObject{
+import test.java.DemoQa.framework1.DemoqaPageObject1;
+
+public class DemoqaHomePage extends DemoqaPageObject1{
 	public DemoqaHomePage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}
 	
-	public DemoqaHomePage clickElementsPage() {
+	public DemoqaElementsPage clickElementsPage() {
 		
-		WebElement menuElement = getProductPageElement("1");
+		WebElement menuElement = getHomePageElement("1");
 			
 		menuElement.click();	
 		
-		return new DemoqaHomePage(this.driver, this.baseUrl);
+		return new DemoqaElementsPage(this.driver, this.baseUrl);
 	}
 	
 	protected WebElement getHomePageElement(String productElement) {
 			
 		return driver.findElement(By.xpath((".//div[@class='category-cards']/div['"+ productElement +"']")));
 	
-	}
-
-	
+	}	
 }

@@ -4,48 +4,52 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class DemoqaElementsPage extends DemoqaPageObject{
-	protected AmpegClassicSeriesPage(WebDriver driver, String baseUrl) {
+import test.java.DemoQa.framework1.DemoqaPageObject1;
+
+public class DemoqaElementsPage extends DemoqaPageObject1{
+	public DemoqaElementsPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}
 	
-	public DemoqaElementsPage clickTestBoxPage() {
+	public DemoqaTestBoxPage clickTestBoxPage() {
 		
-		WebElement menuElement = getClassicProductPageElement("Text Box");
+		WebElement menuElement = getMostElementsPageElement("Text Box");
 		
 		menuElement.click();
 
-		return new SVT410HLFDetailPage(this.driver, this.baseUrl);
+		return new DemoqaTestBoxPage(this.driver, this.baseUrl);
 	}	
-	public DemoqaElementsPage clickRadioButtonPage() {
+	
+	public DemoqaRadioButtonPage clickRadioButtonPage() {
 		
-		WebElement menuElement = getClassicProductPageElement("Radio Button");
+		WebElement menuElement = getMostElementsPageElement("Radio Button");
 		
 		menuElement.click();
 
-		return new SVT410HLFDetailPage(this.driver, this.baseUrl);
+		return new DemoqaRadioButtonPage(this.driver, this.baseUrl);
 	}
-	public DemoqaElementsPage clickLinksPage() {
+	
+	public DemoqaLinksPage clickLinksPage() {
 		
-		WebElement menuElement = getClassicProductPageElement("Links");
+		WebElement menuElement = getMostElementsPageElement("Links");
 		
 		menuElement.click();
 
-		return new SVT410HLFDetailPage(this.driver, this.baseUrl);
+		return new DemoqaLinksPage(this.driver, this.baseUrl);
 	}
-	public DemoqaElementsPage clickDynamicPropertiesPage() {
+	public DemoqaDynamicPropertiesPage clickDynamicPropertiesPage() {
 		
-		WebElement menuElement = getClassicProductPageElement("Dynamic Properties");
+		WebElement menuElement = getDynamicPropertiesPageElement("Dynamic Properties");
 		
 		menuElement.click();
 
-		return new SVT410HLFDetailPage(this.driver, this.baseUrl);
+		return new DemoqaDynamicPropertiesPage(this.driver, this.baseUrl);
 	}
 	
 	public WebElement getMostElementsPageElement(String classicProductElement) {
-		return driver.findElement(By.xpath("//li[@class='btn btn-light ']//[contains(text(),'" + classicProductElement + "')]"));
+		return driver.findElement(By.xpath("//li[@class='btn btn-light ']//span[contains(text(),'" + classicProductElement + "')]"));
 	}
 	public WebElement getDynamicPropertiesPageElement(String classicProductElement) {
-		return driver.findElement(By.xpath("//li[@class='btn btn-light active']//[contains(text(),'" + classicProductElement + "')]"));
+		return driver.findElement(By.xpath("//li[@class='btn btn-light active']//span[contains(text(),'" + classicProductElement + "')]"));
 	}
 }
