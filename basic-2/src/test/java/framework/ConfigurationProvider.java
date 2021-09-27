@@ -12,11 +12,9 @@ public class ConfigurationProvider {
 
 		try {
 			inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
-
 			if(inputStream == null) {
 				throw new RuntimeException(fileName + " was not found in the Resources folder.");
 			}
-
 			properties.load(inputStream);
 		}
 		catch(Exception ex) {
@@ -27,7 +25,7 @@ public class ConfigurationProvider {
 				inputStream.close();
 			}
 		}
-
+		
 		HashMap<String, String> propertyValuesByKey = new HashMap<String, String>();
 
 		for (String key : properties.stringPropertyNames()) {
