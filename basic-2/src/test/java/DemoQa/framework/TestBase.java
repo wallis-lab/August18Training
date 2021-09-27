@@ -1,4 +1,4 @@
-package test.java.DemoQa.framework1;
+package test.java.DemoQa.framework;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -9,19 +9,19 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 
-public abstract class TestBase1 {
+public abstract class TestBase {
 	protected WebDriver driver;
 	protected String baseUrl;
-	protected DriverManager1 manager;
+	protected DriverManager manager;
 	
-	protected TestBase1(String baseUrl){
+	protected TestBase(String baseUrl){
 		this.baseUrl = baseUrl;
 	}
 	
 	@Before
 	public void setup() {
 		String driverType= getDriverType();
-		this.manager= DriverManagerFactory1.getManager(driverType);
+		this.manager= DriverManagerFactory.getManager(driverType);
 		this.manager.createDriver();
 		this.driver=this.manager.getDriver();
 		this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

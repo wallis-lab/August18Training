@@ -1,8 +1,8 @@
 package test.java.DemoQa.foundation;
 
-import test.java.DemoQa.framework1.TestBase1;
+import test.java.DemoQa.framework.TestBase;
 
-public class DemoqaTestBase extends TestBase1{
+public class DemoqaTestBase extends TestBase{
 	
 	protected DemoqaTestBase() {
 		super("https://demoqa.com/");

@@ -3,9 +3,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import test.java.DemoQa.framework1.DemoqaPageObject1;
+import test.java.DemoQa.framework.DemoqaPageObject;
 
-public class DemoqaTestBoxPage extends DemoqaPageObject1{
+public class DemoqaTestBoxPage extends DemoqaPageObject{
 	public static String name = "wenlong";
 	public static String email = "123@gmail.com";
 	public static String cAddress = "555 11th st";

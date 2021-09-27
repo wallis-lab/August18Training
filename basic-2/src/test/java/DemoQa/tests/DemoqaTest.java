@@ -11,7 +11,7 @@ import test.java.DemoQa.pageObjects.DemoqaRadioButtonPage;
 import test.java.DemoQa.pageObjects.DemoqaTestBoxPage;
 
 
-public class DemoqaTest1 extends DemoqaTestBase {
+public class DemoqaTest extends DemoqaTestBase {
 	
 	@Test
 	public void canClickSubmitAndMatchTextInTextBoxPage() {

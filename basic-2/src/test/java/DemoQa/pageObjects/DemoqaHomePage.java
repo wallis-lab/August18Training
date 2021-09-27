@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import test.java.DemoQa.framework1.DemoqaPageObject1;
+import test.java.DemoQa.framework.DemoqaPageObject;
 
-public class DemoqaHomePage extends DemoqaPageObject1{
+public class DemoqaHomePage extends DemoqaPageObject{
 	public DemoqaHomePage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}

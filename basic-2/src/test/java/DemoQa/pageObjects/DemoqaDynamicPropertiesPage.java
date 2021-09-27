@@ -4,9 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import test.java.DemoQa.framework1.DemoqaPageObject1;
 
-public class DemoqaDynamicPropertiesPage extends DemoqaPageObject1 {
+import test.java.DemoQa.framework.DemoqaPageObject;
+
+public class DemoqaDynamicPropertiesPage extends DemoqaPageObject {
 	public DemoqaDynamicPropertiesPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}

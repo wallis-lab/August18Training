@@ -2,9 +2,10 @@ package test.java.DemoQa.pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import test.java.DemoQa.framework1.DemoqaPageObject1;
 
-public class DemoqaElementsPage extends DemoqaPageObject1{
+import test.java.DemoQa.framework.DemoqaPageObject;
+
+public class DemoqaElementsPage extends DemoqaPageObject{
 	public DemoqaElementsPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}
@@ -49,6 +50,7 @@ public class DemoqaElementsPage extends DemoqaPageObject1{
 		
 		return driver.findElement(By.xpath("//li[@class='btn btn-light ']//span[contains(text(),'" + classicProductElement + "')]"));
 	}
+	
 	public WebElement getDynamicPropertiesPageElement() {
 
 		return driver.findElement(By.xpath("//li[@id='item-8']/span[contains(text(),'Dynamic')]"));

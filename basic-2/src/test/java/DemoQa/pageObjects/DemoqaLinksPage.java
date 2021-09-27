@@ -8,9 +8,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import test.java.DemoQa.framework1.DemoqaPageObject1;
+import test.java.DemoQa.framework.DemoqaPageObject;
 
-public class DemoqaLinksPage extends DemoqaPageObject1{
+public class DemoqaLinksPage extends DemoqaPageObject{
 	String search_handle;
 	
 	public DemoqaLinksPage(WebDriver driver, String baseUrl) {

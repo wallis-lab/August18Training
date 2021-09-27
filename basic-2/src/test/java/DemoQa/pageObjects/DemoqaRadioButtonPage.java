@@ -3,10 +3,9 @@ package test.java.DemoQa.pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import test.java.DemoQa.framework.DemoqaPageObject;
 
-import test.java.DemoQa.framework1.DemoqaPageObject1;
-
-public class DemoqaRadioButtonPage extends DemoqaPageObject1{
+public class DemoqaRadioButtonPage extends DemoqaPageObject{
 	public static String clickImpressiveOutPutText;
 	public static String clickYesOutputText;
 	
