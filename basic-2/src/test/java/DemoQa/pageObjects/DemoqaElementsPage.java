@@ -39,17 +39,20 @@ public class DemoqaElementsPage extends DemoqaPageObject1{
 	}
 	public DemoqaDynamicPropertiesPage clickDynamicPropertiesPage() {
 		
-		WebElement menuElement = getDynamicPropertiesPageElement("Dynamic Properties");
+		WebElement menuElement = getDynamicPropertiesPageElement();
 		
 		menuElement.click();
-
 		return new DemoqaDynamicPropertiesPage(this.driver, this.baseUrl);
 	}
 	
 	public WebElement getMostElementsPageElement(String classicProductElement) {
 		return driver.findElement(By.xpath("//li[@class='btn btn-light ']//span[contains(text(),'" + classicProductElement + "')]"));
 	}
-	public WebElement getDynamicPropertiesPageElement(String classicProductElement) {
-		return driver.findElement(By.xpath("//li[@class='btn btn-light active']//span[contains(text(),'" + classicProductElement + "')]"));
+	public WebElement getDynamicPropertiesPageElement() {
+		//return driver.findElement(By.xpath("//li[@class='btn btn-light active']//span[contains(text(),'" + classicProductElement + "')]"));
+		//("//li[@class='btn btn-light active']") $x("//ul[@class='menu-list']/li[@id='item-8']")
+		//$x("//ul[@class='menu-list']/li[@id='item-8']/span[contains (text(),'Dynamic Properties')]")
+		return driver.findElement(By.xpath("//li[@id='item-8']/span[contains(text(),'Dynamic')]"));
 	}
+	
 }

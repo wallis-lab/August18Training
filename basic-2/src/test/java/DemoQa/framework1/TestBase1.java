@@ -45,6 +45,6 @@ public abstract class TestBase1 {
 	
 	@After
 	public void cleanup() {
-		//this.manager.quitDriver();
+		this.manager.quitDriver();
 	}
 }
