@@ -3,9 +3,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.junit.Test;
-import framework.ConfigurationProvider;
 
-public class TestConfigurationProvider {
+public class TestFileRead{
 
 	@Test
 	public void canGetConfigFileValue() throws Exception{
@@ -27,9 +26,6 @@ public class TestConfigurationProvider {
 		CsvReader reader = new CsvReader();
 		ExpectBasses= reader.getExceptCsvFileInHashMap();
 		ActualBasses= reader.getCsvFileAndIntoHashMap();
-		
-		System.out.println(ExpectBasses);
-		System.out.println(ActualBasses);
 		
 		assertTrue(ActualBasses.equals(ExpectBasses));
 	}

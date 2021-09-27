@@ -1,4 +1,4 @@
-package framework;
+package basses;
 
 import java.io.InputStream;
 import java.util.HashMap;

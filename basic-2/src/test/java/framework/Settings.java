@@ -2,6 +2,8 @@ package framework;
 
 import java.util.HashMap;
 
+import basses.ConfigurationProvider;
+
 public class Settings {
 	
 	public String browserType;
