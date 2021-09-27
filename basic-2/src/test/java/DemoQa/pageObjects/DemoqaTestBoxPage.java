@@ -11,21 +11,16 @@ public class DemoqaTestBoxPage extends DemoqaPageObject1{
 	public static String cAddress = "555 11th st";
 	public static String pAddress = "666 88th st";
 	
-	protected DemoqaTestBoxPage(WebDriver driver, String baseUrl) {
+	public DemoqaTestBoxPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}
 	
 	public DemoqaTestBoxPage enterTextInTextBox(){
-		
-		
+			
 		WebElement userName = getUserNameAndEmailElement("userName");
 		WebElement userEmail = getUserNameAndEmailElement("userEmail");
 		WebElement currentAddress = getCirremtAndPermanentAddressElement("currentAddress");
 		WebElement PermanentAddress = getCirremtAndPermanentAddressElement("permanentAddress");
-		
-		//WebElement submitButton = getSubmitElement("submit");
-		//WebElement testResult = getTestResultWhenClickSubmitButton("border col-md-12 col-sm-12");
-		// border col-md-12 col-sm-12
 		
 		userName.sendKeys(name);
 		userEmail.sendKeys(email);
@@ -37,9 +32,9 @@ public class DemoqaTestBoxPage extends DemoqaPageObject1{
 	
 	public DemoqaTestBoxPage clickSubmitButton(){
 		WebElement submitButton = getSubmitElement("submit");
-		//WebElement testResult = getTestResultWhenClickSubmitButton("border col-md-12 col-sm-12");
-		
+	
 		submitButton.click();
+		
 		return new DemoqaTestBoxPage(this.driver, this.baseUrl);
 	}
 	
@@ -61,8 +56,20 @@ public class DemoqaTestBoxPage extends DemoqaPageObject1{
 	public WebElement getTestResultWhenClickSubmitButton(String outPutElement) {
 
 		return driver.findElement(By.xpath("//div[@id='output']/div[@class='"+ outPutElement +"']"));	
-		//$x("//div[@id='output']/div[@class='border col-md-12 col-sm-12']")
+
+	}
+	public String[] getTextWhenClickSubmitButton() {
+		
+		WebElement inputText = getTestResultWhenClickSubmitButton("border col-md-12 col-sm-12");
+		
+		String[] test = inputText.getText().split("\n");
+		
+		return test;	
 	}
 	
-	
+	public WebElement getTestResultWhenClickSubmitButtonByEachElement(String outPutElement) {
+
+		return driver.findElement(By.xpath("//div[@class='border col-md-12 col-sm-12']/p[@id='"+outPutElement+"']"));
+	}
 }
+

@@ -12,6 +12,7 @@ import test.java.DemoQa.framework1.DemoqaPageObject1;
 
 public class DemoqaLinksPage extends DemoqaPageObject1{
 	String search_handle;
+	
 	public DemoqaLinksPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 		search_handle = driver.getWindowHandle();
@@ -20,6 +21,7 @@ public class DemoqaLinksPage extends DemoqaPageObject1{
 	public DemoqaLinksPage clickHomeHyperLink() throws InterruptedException {
 		
 		WebElement RadioButtonElement = getPageHyperLinkElement("simpleLink");
+		
 		RadioButtonElement.click();
 	
 		return new DemoqaLinksPage(this.driver, this.baseUrl);
@@ -41,11 +43,9 @@ public class DemoqaLinksPage extends DemoqaPageObject1{
 	
 	public DemoqaLinksPage clickCreatedHyperLink() throws InterruptedException {
 		
-		Set<String> allWindow = driver.getWindowHandles();  //获取所有的窗口句柄
-		List<String> it = new ArrayList<String>(allWindow);  //将set集合存入list对象中
-		//System.out.println(allWindow.size());
+		Set<String> allWindow = driver.getWindowHandles();  
+		List<String> it = new ArrayList<String>(allWindow); 
 
-		Thread.sleep(2000);
 		driver.switchTo().window(it.get(0));
 		
 		WebElement RadioButtonElement = getPageHyperLinkElement("created");
@@ -65,11 +65,10 @@ public class DemoqaLinksPage extends DemoqaPageObject1{
 	}
 	
 	public String getActualTestWhenClickCreated() {
+		
 		WebElement element = driver.findElement(By.xpath("//p[@id='linkResponse']"));
-		//String[] segments = element.getText();
+
 		return element.getText();
 	}
-
-	
-
 }
+
