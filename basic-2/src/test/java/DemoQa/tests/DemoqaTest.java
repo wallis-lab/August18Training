@@ -1,5 +1,5 @@
 package test.java.DemoQa.tests;
-import static org.junit.Assert.assertArrayEquals;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -15,17 +15,17 @@ public class DemoqaTest extends DemoqaTestBase {
 	
 	@Test
 	public void canClickSubmitAndMatchTextInTextBoxPage() {
-	String expectTest[] = {"Name:wenlong", "Email:123@gmail.com","Current Address :555 11th st","Permananet Address :666 88th st"};
-	
+		
 		new DemoqaHomePage(driver, baseUrl)
 		.clickElementsPage()
 		.clickTestBoxPage()
 		.enterTextInTextBox()
 		.clickSubmitButton();
-		
-		String[] actualTest = new DemoqaTestBoxPage(driver, baseUrl).getTextWhenClickSubmitButton();
-		
-		assertArrayEquals("asd", expectTest, actualTest);	
+
+		assertEquals("not the same name", DemoqaTestBoxPage.fullName, DemoqaTestBoxPage.name);	
+		assertEquals("not the same email", DemoqaTestBoxPage.Email, DemoqaTestBoxPage.email);	
+		assertEquals("not the same current address", DemoqaTestBoxPage.cAddress, DemoqaTestBoxPage.currentAddress);	
+		assertEquals("not the same permanent address", DemoqaTestBoxPage.pAddress, DemoqaTestBoxPage.permanentAddress);	
 	}
 
 	@Test
@@ -46,17 +46,16 @@ public class DemoqaTest extends DemoqaTestBase {
 	@Test
 	public void canClickHomeLink() throws InterruptedException {
 		String ExceptText = "Link has responded with staus 201 and status text Created";
+		DemoqaLinksPage actualText = new DemoqaLinksPage(driver, baseUrl);
+		
 		new DemoqaHomePage(driver, baseUrl)
 		.clickElementsPage()
 		.clickLinksPage()
 		.clickHomeHyperLink()
 		.clickNewPageJoinNowButton()
 		.clickCreatedHyperLink();
-		
-		DemoqaLinksPage actualText = new DemoqaLinksPage(driver, baseUrl);
-		
-		assertEquals(ExceptText,actualText.getActualTestWhenClickCreated());
-		
+	
+		assertEquals(ExceptText,actualText.getActualTestWhenClickCreated());		
 	}
 	
 	@Test
