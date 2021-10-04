@@ -1,0 +1,18 @@
+1. $("input#userName")
+2. $("button.btn.btn-primary")
+3. $("footer span")
+4. $("ul#nav >li:nth-child(n-1)")
+5. $("select#oldSelectMenu option[value=4]")
+6. $("input#sliderValue").val()   or    document.getElementById("sliderValue").value
+7. $("#userName").val()            or    document.getElementById("userName").value
+
+
+
+
+1. $x("//div/input[@id='userName']")
+2. $x("//div/button[@class='btn btn-primary']")
+3. $x("//div[@class='ReactTable -striped -highlight']//*[contains(text(),'Vega')]")
+4. $x("//input[@id='impressiveRadio']/..")
+5. $x("//*[ancestor::div[input[@id='impressiveRadio']]]")
+6. $x("//input[@id='impressiveRadio']/../following-sibling::div")   or   $x("//input[@id='impressiveRadio']/../child::node()[2]")
+7. $x("//button[contains(text(),'Click')]")
