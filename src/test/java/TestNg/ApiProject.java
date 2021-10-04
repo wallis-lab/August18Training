@@ -10,7 +10,9 @@ import static org.hamcrest.Matchers.*;
 import org.testng.Assert;
 
 public class ApiProject {
+	
 	final Type type = null;
+	
 	@Test
 	public void TestGetSingleUser() {
 
