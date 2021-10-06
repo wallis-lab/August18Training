@@ -37,5 +37,6 @@
 	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/testng-7.4.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/jquery-3.5.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/jcommander-1.78.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
