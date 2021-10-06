@@ -1,4 +1,4 @@
-package framework;
+package test.java.framework;
 
 public class DriverManagerFactory {
 

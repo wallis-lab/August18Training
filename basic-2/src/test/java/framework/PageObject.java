@@ -1,4 +1,6 @@
-package framework;
+package test.java.framework;
+
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 

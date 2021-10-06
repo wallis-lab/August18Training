@@ -1,4 +1,4 @@
-package framework;
+package test.java.framework;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
