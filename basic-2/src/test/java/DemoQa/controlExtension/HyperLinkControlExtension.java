@@ -1,4 +1,4 @@
-package test.java.DemoQa.controlExtension;
+package DemoQa.controlExtension;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

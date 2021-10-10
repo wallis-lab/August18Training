@@ -1,4 +1,4 @@
-package test.java.DemoQa.framework;
+package DemoQa.framework;
 
 public class DriverManagerFactory {
 

@@ -1,4 +1,4 @@
-package test.java.DemoQa.pageObjects;
+package DemoQa.pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import test.java.DemoQa.controlExtension.radioButtonControlExtension;
-import test.java.DemoQa.framework.DemoqaPageObject;
+import DemoQa.controlExtension.radioButtonControlExtension;
+import DemoQa.framework.DemoqaPageObject;
 
 public class DemoqaRadioButtonPage extends DemoqaPageObject{
 	

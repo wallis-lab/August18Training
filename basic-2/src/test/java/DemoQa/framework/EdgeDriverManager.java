@@ -1,4 +1,4 @@
-package test.java.DemoQa.framework;
+package DemoQa.framework;
 
 import org.openqa.selenium.edge.EdgeDriver;
 

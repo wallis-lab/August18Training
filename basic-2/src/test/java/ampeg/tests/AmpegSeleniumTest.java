@@ -1,14 +1,13 @@
-package test.java.ampeg.tests;
-
+package ampeg.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import test.java.ampeg.foundation.AmpegTestBase;
-import test.java.ampeg.pageObjects.AmpegHomePage;
-import test.java.ampeg.pageObjects.SVT410HLFDetailPage;
+import ampeg.foundation.AmpegTestBase;
+import ampeg.pageObjects.AmpegHomePage;
+import ampeg.pageObjects.SVT410HLFDetailPage;
 
 public class AmpegSeleniumTest extends AmpegTestBase {
 	

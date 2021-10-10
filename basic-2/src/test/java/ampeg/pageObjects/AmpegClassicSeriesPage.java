@@ -1,9 +1,9 @@
-package test.java.ampeg.pageObjects;
+package ampeg.pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import test.java.framework.PageObject;
+import framework.PageObject;
 
 public class AmpegClassicSeriesPage extends PageObject {
 	protected AmpegClassicSeriesPage(WebDriver driver, String baseUrl) {

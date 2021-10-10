@@ -1,4 +1,4 @@
-package test.java.DemoQa.pageObjects;
+package DemoQa.pageObjects;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -10,8 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import test.java.DemoQa.controlExtension.HyperLinkControlExtension;
-import test.java.DemoQa.framework.DemoqaPageObject;
+import DemoQa.controlExtension.HyperLinkControlExtension;
+import DemoQa.framework.DemoqaPageObject;
 
 public class DemoqaLinksPage extends DemoqaPageObject{
 	String search_handle;

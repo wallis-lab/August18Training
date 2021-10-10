@@ -1,4 +1,4 @@
-package test.java.framework;
+package framework;
 
 import org.openqa.selenium.WebDriver;
 

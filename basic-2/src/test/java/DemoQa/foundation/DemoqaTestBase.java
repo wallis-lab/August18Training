@@ -1,6 +1,6 @@
-package test.java.DemoQa.foundation;
+package DemoQa.foundation;
 
-import test.java.DemoQa.framework.TestBase;
+import framework.TestBase;
 
 public class DemoqaTestBase extends TestBase{
 	

@@ -1,14 +1,16 @@
-package test.java.DemoQa.tests;
+package DemoQa.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
-import test.java.DemoQa.foundation.DemoqaTestBase;
-import test.java.DemoQa.pageObjects.DemoqaDynamicPropertiesPage;
-import test.java.DemoQa.pageObjects.DemoqaHomePage;
-import test.java.DemoQa.pageObjects.DemoqaLinksPage;
-import test.java.DemoQa.pageObjects.DemoqaRadioButtonPage;
-import test.java.DemoQa.pageObjects.DemoqaTestBoxPage;
+
+import DemoQa.foundation.DemoqaTestBase;
+import DemoQa.pageObjects.DemoqaDynamicPropertiesPage;
+import DemoQa.pageObjects.DemoqaHomePage;
+import DemoQa.pageObjects.DemoqaLinksPage;
+import DemoQa.pageObjects.DemoqaRadioButtonPage;
+import DemoQa.pageObjects.DemoqaTestBoxPage;
 
 
 public class DemoqaTest extends DemoqaTestBase {

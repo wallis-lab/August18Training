@@ -1,6 +1,6 @@
-package test.java.ampeg.foundation;
+package ampeg.foundation;
 
-import test.java.framework.TestBase;
+import framework.TestBase;
 
 public class AmpegTestBase extends TestBase{
 	

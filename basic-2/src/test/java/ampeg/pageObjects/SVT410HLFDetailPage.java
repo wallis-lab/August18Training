@@ -1,9 +1,9 @@
-package test.java.ampeg.pageObjects;
+package ampeg.pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import test.java.framework.PageObject;
+import framework.PageObject;
 
 public class SVT410HLFDetailPage extends PageObject{
 	public SVT410HLFDetailPage(WebDriver driver, String baseUrl) {

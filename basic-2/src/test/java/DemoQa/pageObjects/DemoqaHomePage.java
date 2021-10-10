@@ -1,10 +1,10 @@
-package test.java.DemoQa.pageObjects;
+package DemoQa.pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import test.java.DemoQa.framework.DemoqaPageObject;
+import DemoQa.framework.DemoqaPageObject;
 
 public class DemoqaHomePage extends DemoqaPageObject{
 	public DemoqaHomePage(WebDriver driver, String baseUrl) {

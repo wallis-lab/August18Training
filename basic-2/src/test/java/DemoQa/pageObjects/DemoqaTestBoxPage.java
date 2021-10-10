@@ -1,4 +1,4 @@
-package test.java.DemoQa.pageObjects;
+package DemoQa.pageObjects;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import test.java.DemoQa.controlExtension.TextboxControlExtension;
-import test.java.DemoQa.framework.DemoqaPageObject;
+import DemoQa.controlExtension.TextboxControlExtension;
+import DemoQa.framework.DemoqaPageObject;
 
 public class DemoqaTestBoxPage extends DemoqaPageObject{
 	public static String name = "wenlong";

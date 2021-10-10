@@ -1,11 +1,11 @@
-package test.java.DemoQa.pageObjects;
+package DemoQa.pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import test.java.DemoQa.framework.DemoqaPageObject;
+import DemoQa.framework.DemoqaPageObject;
 
 public class DemoqaDynamicPropertiesPage extends DemoqaPageObject {
 	public DemoqaDynamicPropertiesPage(WebDriver driver, String baseUrl) {
