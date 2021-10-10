@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import framework.PageObject;
 
 public class SvtProPage extends PageObject{
-	protected SvtProPage(WebDriver driver, String baseUrl) {
+	public SvtProPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}
 

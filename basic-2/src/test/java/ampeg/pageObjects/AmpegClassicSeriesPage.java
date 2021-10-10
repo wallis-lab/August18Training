@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import framework.PageObject;
 
 public class AmpegClassicSeriesPage extends PageObject {
-	protected AmpegClassicSeriesPage(WebDriver driver, String baseUrl) {
+	public AmpegClassicSeriesPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}
 	

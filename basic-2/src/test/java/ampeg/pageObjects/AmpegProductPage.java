@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import framework.PageObject;
 
 public class AmpegProductPage extends PageObject{
-	protected AmpegProductPage(WebDriver driver, String baseUrl) {
+	public AmpegProductPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}
 
@@ -31,5 +31,6 @@ public class AmpegProductPage extends PageObject{
 	public WebElement getProductTypeElement(String productTypeElement) {
 		return driver.findElement(By.xpath("//td[@class='borderBottom']/a[contains(@href, '" + productTypeElement + "')]"));
 	}
+
 }
 
