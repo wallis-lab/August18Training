@@ -76,5 +76,4 @@ public class CucumberStep{
 	public void close() {
 		driver.close();
 	}
-
 }
